@@ -3,6 +3,10 @@ main {
   animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
+main2 {
+  animation: fade-in-bottom 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
 .section-title {
   margin-top: 0;
   margin-bottom: 1rem;
