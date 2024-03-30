@@ -73,11 +73,12 @@ nav {
 
 nav.js-nav {
   opacity: 0;
+  z-index: 50;
+  animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .js-nav.visible {
-  z-index: 50;
-  animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+
 }
 
 .js-nav.visible.scroll-up {
