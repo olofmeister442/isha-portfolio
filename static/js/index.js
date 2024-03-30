@@ -7,7 +7,7 @@ const themeDisplay = document.getElementById('theme-display');
 const themeContainer = document.querySelector('.theme-container');
 const themeSelectors = document.getElementsByClassName('theme-select');
 
-//mainNav.classList.add('js-nav');
+mainNav.classList.add('js-navv');
 
 const getTheme = () => {
   const theme = localStorage.getItem('theme');
