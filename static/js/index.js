@@ -9,46 +9,6 @@ const themeSelectors = document.getElementsByClassName('theme-select');
 
 mainNav.classList.add('js-nav');
 
-const getTheme = () => {
-  const theme = localStorage.getItem('theme');
-  theme && setActiveSelector(theme);
-  root.className = theme;
-  const shade = getComputedStyle(document.documentElement).getPropertyValue('--shade-100');
-  document.querySelector('meta[name="theme-color"]').setAttribute('content', shade);
-}
-
-const setTheme = (className) => {
-  var root = document.getElementsByTagName('html')[0];
-  root.className = className;
-  localStorage.setItem('theme', className);
-  const shade = getComputedStyle(document.documentElement).getPropertyValue('--shade-100');
-  document.querySelector('meta[name="theme-color"]').setAttribute('content', shade);
-  setActiveSelector(className);
-}
-
-const setActiveSelector = (className) => {
-  var selectedTheme = document.getElementById(`${className}-select`);
-  [...themeSelectors].forEach(item => {
-    item.classList.remove('active')
-  });
-  selectedTheme.classList.add('active');
-  hideThemeContainer();
-}
-
-const showThemeContainer = () => {
-  themeContainer.classList.add('visible');
-  [...themeSelectors].forEach(item => {
-    item.tabIndex = 0
-  });
-}
-
-const hideThemeContainer = () => {
-  themeContainer.classList.remove('visible');
-  [...themeSelectors].forEach(item => {
-    item.tabIndex = -1
-  });
-}
-
 const showMenu = () => {
   menu.classList.add('visible');
   menuButton.classList.add('active');
@@ -89,19 +49,8 @@ const handleNavScroll = () => {
   }
 }
 
-getTheme();
-
-themeDisplay.addEventListener("click", function () {
-  hideMenu()
-  if (themeContainer.classList.contains('visible')) {
-    hideThemeContainer();
-  } else {
-    showThemeContainer();
-  }
-})
 
 menuButton.addEventListener("click", function () {
-  hideThemeContainer();
   if (menu.classList.contains('visible')) {
     hideMenu();
   } else {
@@ -110,7 +59,6 @@ menuButton.addEventListener("click", function () {
 })
 
 menu.addEventListener("click", function () {
-  hideThemeContainer();
   hideMenu()
 })
 
